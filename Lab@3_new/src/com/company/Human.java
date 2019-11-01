@@ -2,11 +2,11 @@ package com.company;
 
 abstract class Human implements IHuman {
     private final String Name;
-    private String ParamDo ;
+    public final String G;
 
-    Human(String name, String Do) {
+    Human(String name, String g) {
         Name = name;
-        ParamDo = Do;
+        G = g;
     }
 
     public String getName(){
@@ -26,11 +26,11 @@ abstract class Human implements IHuman {
     }
 
     void fly(){
-        System.out.print(this.getName() + " улетел с ним на " + Place.placeArr + "\n");
+        System.out.print(this.getName() + " улетел с ним на " + Place.clientsArr + "\n");
     }
 
     void bol(){
-        System.out.print("Они сделали такой резкий вираж, что у " +this.getName()+"а" + this.ParamDo + "и засосало под ложечкой ");
+        System.out.print("Они сделали такой резкий вираж, что у " +this.getName()+"а" + this.G + "и засосало под ложечкой ");
     }
 
     public int hashCode(){
@@ -38,7 +38,7 @@ abstract class Human implements IHuman {
     }
 
     public boolean equals(Object obj) {
-        return obj.hashCode() == this.hashCode() ? true : false;
+        return obj.hashCode()== this.hashCode() ? true : false;
     }
 
     public String toString() {

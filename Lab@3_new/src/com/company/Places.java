@@ -4,3 +4,4 @@ public enum Places {
     BALCONY,
     Rollercoaster
 }
+
