@@ -15,9 +15,9 @@ public class Main {
         System.out.print(kid.toString());
         Place place = new Place("балкончик", Places.BALCONY);
         System.out.print(place.toString());
-        Place rollerCoaster = new Place("американских горках", Places.Rollercoaster);
+        Place rollerCoaster = new Place("американские горки", Places.Rollercoaster);
         System.out.print(rollerCoaster.toString());
-        kid.GOOOO();
+        kid.Gudok();
         System.out.print("Рассказ: \n");
         karloson.sighed();
         kid.waked();
