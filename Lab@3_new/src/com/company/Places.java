@@ -1,6 +1,7 @@
 package com.company;
 
 public enum Places {
-    Balcony,
+    BALCONY,
     Rollercoaster
 }
+

@@ -1,13 +1,12 @@
 package com.company;
 
-import java.util.ArrayList;
-
 abstract class Human implements IHuman {
-    private ArrayList<Human> clientsArr = new ArrayList<Human>();
-    private String Name;
+    private final String Name;
+    public final String G;
 
-    Human(String name) {
+    Human(String name, String g) {
         Name = name;
+        G = g;
     }
 
     public String getName(){
@@ -15,7 +14,7 @@ abstract class Human implements IHuman {
     }
 
     void speak(){
-        System.out.print("Затем все произошло точь-в-точь так, как сказал "+this.getName());
+        System.out.print("Затем все произошло точь-в-точь так, как сказал " + this.getName() + "\n");
     }
 
     void sighed() {
@@ -27,15 +26,11 @@ abstract class Human implements IHuman {
     }
 
     void fly(){
-        System.out.print(this.getName() + " улетел с ним на " + place1.clientsArr + "\n");
-    }
-
-    void dodo(){
-        System.out.print(this.getName() + " сделали такой резкий вираж ");
+        System.out.print(this.getName() + " улетел с ним на " + Place.clientsArr + "\n");
     }
 
     void bol(){
-        System.out.print("что у " +this.getName() + " загудело в ушах и засосало под ложечкой ");
+        System.out.print("Они сделали такой резкий вираж, что у " +this.getName()+"а" + this.G + "и засосало под ложечкой ");
     }
 
     public int hashCode(){
@@ -51,3 +46,4 @@ abstract class Human implements IHuman {
     }
 
 }
+

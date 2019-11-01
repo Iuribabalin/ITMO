@@ -9,22 +9,37 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        Karloson karloson = new Karloson("Карлсон");
+        HumanwithPropeller karloson = new HumanwithPropeller("Карлсон");
         System.out.print(karloson.toString());
-        Kid kid = new Kid("Малыш");
+        Kid kid = new Kid("Малыш", " загудело в ушах");
         System.out.print(kid.toString());
-        place1 place = new place1("балкончик");
+        Place place = new Place("балкончик", Places.BALCONY);
         System.out.print(place.toString());
-        They they = new They("Они");
-        RollerCoaster rollerCoaster = new RollerCoaster("американских горках");
+        Place rollerCoaster = new Place("американских горках", Places.Rollercoaster);
         System.out.print(rollerCoaster.toString());
+        kid.GOOOO();
         System.out.print("Рассказ: \n");
         karloson.sighed();
         kid.waked();
         karloson.fly();
-        they.dodo();
         kid.bol();
         rollerCoaster.RCoaster();
         karloson.speak();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//дока ecvals
