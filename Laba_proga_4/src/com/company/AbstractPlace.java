@@ -3,6 +3,7 @@ package com.company;
 abstract class AbstractPlace implements IPlace{
     private final String NamePlace;
     private Places type;
+    private String messang = null;
 
     AbstractPlace(String name) {
         NamePlace = name;
@@ -24,15 +25,19 @@ abstract class AbstractPlace implements IPlace{
         System.out.print("еще сильнее, чем на " + this.getName() + "\n");
     }
 
+    String NamePlace() throws NamePlaceException{
+        if ((!NamePlace.equals("балкончик")) && (!NamePlace.equals("американские горки"))){
+            throw new NamePlaceException("Error name place");
+        }
+        this.messang = "место " + this.NamePlace + " создано\n";
+        return this.messang;
+    }
+
     public int hashCode(){
         return super.hashCode()+this.NamePlace.hashCode();
     }
 
     public boolean equals(Object obj) {
         return obj.hashCode()== this.hashCode() ? true : false;
-    }
-
-    public String toString() {
-        return "место " + this.NamePlace + " создано\n";
     }
 }

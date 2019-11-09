@@ -4,13 +4,13 @@
 Они сделали такой резкий вираж, что у Малыша загудело в ушах и засосало под ложечкой еще
 сильнее, чем на "американских горах". Затем все произошло точь-в-точь так, как сказал Карлсон.
  */
+
 package com.company;
 
 public class Main {
-
     public static void main(String[] args) {
-        boolean flagName = false;
-        boolean flagPlace = false;
+        String Massenge = null;
+
         //local class -> Histori
         class Histori{
             private void PrintHistori(){
@@ -19,56 +19,51 @@ public class Main {
         }
 
         Histori histori = new Histori();
-        HumanwithPropeller karloson = new HumanwithPropeller("Карлсон");
-        Kid kid = new Kid("Малыш", " загудело в ушах");
-        Place place = new Place("балкончик", Places.BALCONY);
-        Place rollerCoaster = new Place("американские горки", Places.Rollercoaster);
-
-        checked check = new checked();
-
-        //анонимный класс создаёться внутри java машины
-        unchecked uncheck = new unchecked(){
-            boolean PlaceCheck(String NamePlace) {
-                boolean flag = false;
-                if (!(!(NamePlace.equals("балкончик")) && !(NamePlace.equals("американские горки")))){
-                    flag = true;
-                }
-                return flag;
+        HumanwithPropeller karloson = new HumanwithPropeller("Карлсон"){
+            public void sighed(){
+                System.out.print(this.getName() + " вздохнул" + "\n");
+                System.out.print("Пора валить \n");
             }
         };
 
-        unchecked.InUnchecked inUnchecked = new unchecked.InUnchecked();
+        Kid kid = new Kid("Малыш", " загудело в ушах");
+        Place place = new Place("балкончик", Places.BALCONY);
+        Place rollerCoaster = new Place("американские горки", Places.Rollercoaster);
+        EndHistori.InEndHistori invest = new EndHistori.InEndHistori();
+//"балкончик"
 
-        if((check.ourHero(karloson.getName()) == check.ourHero(kid.getName())) && (!karloson.getName().equals(kid.getName())))
-            flagName = true;
-
-
-        if((uncheck.PlaceCheck(place.getName()) == uncheck.PlaceCheck(rollerCoaster.getName())) && (!place.getName().equals(rollerCoaster.getName())))
-            flagPlace = true;
-
-
-        if(flagName && flagPlace){
-            System.out.print("Good work \n");
+        try {
             System.out.print(karloson.toString());
             System.out.print(kid.toString());
-            System.out.print(place.toString());
-            System.out.print(rollerCoaster.toString());
+
+            Massenge = place.NamePlace();
+            System.out.print(Massenge);
+            Massenge = rollerCoaster.NamePlace();
+            System.out.print(Massenge);
+
             kid.Gudok();
             histori.PrintHistori();
             karloson.sighed();
             kid.waked();
-            karloson.fly();
+
+            try {
+                Massenge = karloson.fly(place.getName());
+                System.out.print(Massenge);
+            }
+            catch (FlyException e){
+                System.out.print(e.getMessage());
+                System.out.print(karloson.getName() + " улетел с ним на " + place.getName() + ".\n");
+            }
+
             kid.bol();
             rollerCoaster.RCoaster();
             karloson.speak();
-        } else if (!flagName){
-            System.out.print("Error name persons, pleas update names");
-        } else {
-            System.out.print("Error name places, pleas update names");
+        }
+        catch (NamePlaceException e){
+            System.out.print(e.getMessage());
         }
 
-        inUnchecked.PrintInf();
-
+        invest.PrintInf();
 
     }
 }
