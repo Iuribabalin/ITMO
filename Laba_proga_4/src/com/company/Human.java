@@ -3,7 +3,6 @@ package com.company;
 abstract class Human implements IHuman {
     private final String Name;
     private String ParamDo ;
-    private String messang;
 
     Human(String name, String Do) {
         Name = name;
@@ -22,15 +21,6 @@ abstract class Human implements IHuman {
 
     void waked(){
         System.out.print("Прежде чем " + this.getName() + " успел опомнился" + ", ");
-    }
-
-    String fly(String place) throws FlyException{
-        int a = (int) (Math.random()*2);
-        if (a == 1){
-            throw new FlyException("\n''Я заглох, сейчас надо смазать пропеллер''\n");
-        }
-        this.messang = this.getName() + " улетел с ним на " + place + ".\n";
-        return this.messang;
     }
 
     void bol(){

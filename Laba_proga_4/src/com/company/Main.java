@@ -8,8 +8,11 @@
 package com.company;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         String Massenge = null;
+        boolean flagerror = false;
+        boolean flagcnt = false;
+
 
         //local class -> Histori
         class Histori{
@@ -31,11 +34,9 @@ public class Main {
         Place rollerCoaster = new Place("американские горки", Places.Rollercoaster);
         EndHistori.InEndHistori invest = new EndHistori.InEndHistori();
 //"балкончик"
-
         try {
             System.out.print(karloson.toString());
             System.out.print(kid.toString());
-
             Massenge = place.NamePlace();
             System.out.print(Massenge);
             Massenge = rollerCoaster.NamePlace();
@@ -46,24 +47,27 @@ public class Main {
             karloson.sighed();
             kid.waked();
 
-            try {
-                Massenge = karloson.fly(place.getName());
-                System.out.print(Massenge);
-            }
-            catch (FlyException e){
-                System.out.print(e.getMessage());
-                System.out.print(karloson.getName() + " улетел с ним на " + place.getName() + ".\n");
+            while (!flagerror) {
+                try {
+                    Massenge = karloson.fly(place.getName());
+                    if(flagcnt) {
+                        System.out.print("\nНаконец то, ну всё полетели вииииии\n");
+                    }
+                    System.out.print(Massenge);
+                    flagerror = true;
+                    flagcnt = true;
+                } catch (FlyException e) {
+                    flagcnt = true;
+                    System.out.print(e.getMessage());
+                }
             }
 
             kid.bol();
             rollerCoaster.RCoaster();
             karloson.speak();
-        }
-        catch (NamePlaceException e){
+            invest.PrintInf();
+        }catch (NamePlaceException e){
             System.out.print(e.getMessage());
         }
-
-        invest.PrintInf();
-
     }
 }

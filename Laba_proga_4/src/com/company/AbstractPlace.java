@@ -25,10 +25,7 @@ abstract class AbstractPlace implements IPlace{
         System.out.print("еще сильнее, чем на " + this.getName() + "\n");
     }
 
-    String NamePlace() throws NamePlaceException{
-        if ((!NamePlace.equals("балкончик")) && (!NamePlace.equals("американские горки"))){
-            throw new NamePlaceException("Error name place");
-        }
+    String NamePlace(){
         this.messang = "место " + this.NamePlace + " создано\n";
         return this.messang;
     }

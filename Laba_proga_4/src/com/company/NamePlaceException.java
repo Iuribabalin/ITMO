@@ -1,6 +1,6 @@
 package com.company;
 
-class NamePlaceException extends Exception {
+class NamePlaceException extends RuntimeException{
 
     private String ErrorMessage = null;
 
